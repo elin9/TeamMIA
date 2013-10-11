@@ -1,0 +1,196 @@
+/* This is a .css file for ResLife */
+<style>
+
+	body {
+		font-family: sans-serif;
+		font-size: 16px;}
+
+	#container {
+		width:100%;}
+
+	#header {
+		text-align:center;}
+
+	#menu {
+		height:100%;
+		width:40%;
+		float:left;}
+
+	#content {
+		height:100%;
+		width:60%;
+		float:left;}
+
+	#footer {
+		clear:both;
+		text-align:center;}
+
+	#login {
+		position:fixed;
+		top:20px;
+		right:30px;
+		text-align:left;}
+
+	#menu2 {
+		height:100%;
+		width:30%;
+		float:left;}
+
+	#content2 {
+		height:100%;
+		width:70%;
+		float:left;}
+
+	#susan {
+		width:200px;
+	  background-color:#FFFFCC;
+		padding-left:10px;
+		padding-top:1px;
+		padding-bottom:17px;
+		margin-left:10px;
+		margin-right:10px;
+		float:left;}
+
+	#freshman {
+		width:200px;
+	  background-color:#CC6666;
+		padding-left:10px;
+		padding-top:1px;
+		padding-bottom:1px;
+		margin-top:5px;
+		margin-left:10px;
+		margin-right:10px;
+		float:left;}
+
+	#fraternity {
+		width:200px;
+	  background-color:#9999FF;
+		padding-left:10px;
+		padding-top:1px;
+		padding-bottom:25px;
+		margin-top:5px;
+		margin-left:10px;
+		margin-right:10px;
+		float:left;}
+
+	#jackson {
+		width:200px;
+	  background-color:#99CCFF;
+		padding-left:10px;
+		padding-top:1px;
+		padding-bottom:1px;
+		margin-top:5px;
+		margin-left:10px;
+		margin-right:10px;
+		float:left;}
+
+	#southside {
+		width:200px;
+	  background-color:#CCFFCC;
+		padding-left:10px;
+		padding-top:1px;
+		padding-bottom:1px;
+		margin-top:5px;
+		margin-left:10px;
+		margin-right:10px;
+		float:left;}
+
+	#riverview {
+		width:200px;
+	  background-color:#FFCCFF;
+		padding-left:10px;
+		padding-top:1px;
+		padding-bottom:1px;
+		margin-left:10px;
+		margin-right:10px;
+		float:left;}
+
+	#hill {
+		width:200px;
+	  background-color:#669966;
+		padding-left:10px;
+		padding-top:1px;
+		padding-bottom:1px;
+		margin-top:5px;
+		margin-left:10px;
+		margin-right:10px;
+		float:left;}
+
+  #susan2 {
+		width:200px;
+		line-height:150%;
+		margin-left:10px;}
+
+	#freshman2 {
+		width:200px;
+		line-height:150%;
+		margin-left:10px;}
+
+	#fraternity2 {
+		width:200px;
+		line-height:150%;
+		margin-left:10px;}
+
+	#jackson2 {
+		width:200px;
+		line-height:150%;
+		margin-left:10px;}
+
+	#southside2 {
+		width:200px;
+		line-height:150%;
+		margin-left:10px;}
+
+	#riverview2 {
+		width:200px;
+		line-height:150%;
+		margin-left:10px;}
+
+	#hill2 {
+		width:200px;
+		line-height:150%;
+		margin-left:10px;}
+
+	#primary {
+		clear:both;
+		width:300px;
+		text-align:left;
+		margin-left:20px;
+		float:left;}
+
+	#secondary {
+		width:300px;
+		text-align:left;
+		margin-left:20px;
+		float:left;}
+
+	#submit {
+		clear:both;
+		width:100%;
+		text-align:center;}
+
+	h1 {
+		font-family: sans-serif;
+	 	font-size: 32px;
+	 	color: #000000;}
+
+	h2 {
+		font-family: sans-serif;
+		font-size: 20px;}
+
+	h3 {
+		font-family: sans-serif;
+		font-size: 20px;}
+
+	ul {
+		font-family: sans-serif;
+		font-size: 16px;}
+
+	a:link {
+		color: #0000FF;}
+	a:visited {
+		color: #990000;}
+	a:hover {
+		color: #0000FF;}
+
+</style>
