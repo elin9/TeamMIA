@@ -13,12 +13,12 @@
 
 	#menu {
 		height:100%;
-		width:40%;
+		width:30%;
 		float:left;}
 
 	#content {
 		height:100%;
-		width:60%;
+		width:70%;
 		float:left;}
 
 	#footer {
@@ -36,119 +36,126 @@
 		width:30%;
 		float:left;}
 
-	#content2 {
-		height:100%;
-		width:70%;
+	#top_left {
+		height:60%;
+		width:35%;
+		float:left;}
+
+	#top_right {
+		height:60%;
+		width:35%;
+		float:left;}
+
+	#bottom_left {
+		height:40%;
+		width:35%;
+		float:left;}
+
+	#bottom_right {
+		height:40%;
+		width:35%;
 		float:left;}
 
 	#susan {
-		width:200px;
+		width:180px;
 	  background-color:#FFFFCC;
 		padding-left:10px;
 		padding-top:1px;
-		padding-bottom:17px;
-		margin-left:10px;
+		margin-left:30px;
 		margin-right:10px;
-		float:left;}
+		margin-bottom:10px;}
 
-	#freshman {
-		width:200px;
+	#res {
+		width:180px;
 	  background-color:#CC6666;
-		padding-left:10px;
+		padding-left:50px;
 		padding-top:1px;
 		padding-bottom:1px;
-		margin-top:5px;
-		margin-left:10px;
+		margin-left:50px;
 		margin-right:10px;
-		float:left;}
+		margin-bottom:10px;}
 
 	#fraternity {
-		width:200px;
+		width:180px;
 	  background-color:#9999FF;
-		padding-left:10px;
+		padding-left:50px;
 		padding-top:1px;
-		padding-bottom:25px;
-		margin-top:5px;
-		margin-left:10px;
+		margin-left:50px;
 		margin-right:10px;
-		float:left;}
+		margin-bottom:10px;}
 
 	#jackson {
-		width:200px;
+		width:180px;
 	  background-color:#99CCFF;
-		padding-left:10px;
+		padding-left:50px;
 		padding-top:1px;
 		padding-bottom:1px;
-		margin-top:5px;
-		margin-left:10px;
+		margin-left:50px;
 		margin-right:10px;
-		float:left;}
+		margin-bottom:10px;}
 
 	#southside {
-		width:200px;
+		width:180px;
 	  background-color:#CCFFCC;
-		padding-left:10px;
+		padding-left:50px;
 		padding-top:1px;
 		padding-bottom:1px;
-		margin-top:5px;
-		margin-left:10px;
-		margin-right:10px;
-		float:left;}
+		margin-left:50px;
+		margin-right:10px;}
 
 	#riverview {
-		width:200px;
+		width:180px;
 	  background-color:#FFCCFF;
-		padding-left:10px;
+		padding-left:50px;
 		padding-top:1px;
 		padding-bottom:1px;
-		margin-left:10px;
+		margin-left:50px;
 		margin-right:10px;
-		float:left;}
+		margin-bottom:10px;}
 
 	#hill {
-		width:200px;
+		width:180px;
 	  background-color:#669966;
-		padding-left:10px;
+		padding-left:50px;
 		padding-top:1px;
 		padding-bottom:1px;
-		margin-top:5px;
-		margin-left:10px;
+		margin-left:50px;
 		margin-right:10px;
-		float:left;}
+		margin-bottom:10px;}
 
   #susan2 {
 		width:200px;
-		line-height:150%;
+		line-height:120%;
 		margin-left:10px;}
 
-	#freshman2 {
+	#res2 {
 		width:200px;
-		line-height:150%;
+		line-height:120%;
 		margin-left:10px;}
 
 	#fraternity2 {
 		width:200px;
-		line-height:150%;
+		line-height:120%;
 		margin-left:10px;}
 
 	#jackson2 {
 		width:200px;
-		line-height:150%;
+		line-height:120%;
 		margin-left:10px;}
 
 	#southside2 {
 		width:200px;
-		line-height:150%;
+		line-height:120%;
 		margin-left:10px;}
 
 	#riverview2 {
 		width:200px;
-		line-height:150%;
+		line-height:120%;
 		margin-left:10px;}
 
 	#hill2 {
 		width:200px;
-		line-height:150%;
+		line-height:120%;
 		margin-left:10px;}
 
 	#primary {
