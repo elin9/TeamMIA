@@ -33,27 +33,27 @@
 
 	#menu2 {
 		height:100%;
-		width:30%;
+		width:20%;
 		float:left;}
 
 	#top_left {
 		height:60%;
-		width:35%;
+		width:30%;
 		float:left;}
 
 	#top_right {
 		height:60%;
-		width:35%;
+		width:50%;
 		float:left;}
 
 	#bottom_left {
 		height:40%;
-		width:35%;
+		width:30%;
 		float:left;}
 
 	#bottom_right {
 		height:40%;
-		width:35%;
+		width:50%;
 		float:left;}
 
 	#susan {
