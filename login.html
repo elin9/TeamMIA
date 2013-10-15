@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Submit Your Room Options</title>
+  <title>Housing Selection</title>
   <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
   <link href="reslife.css" type="text/css" rel="stylesheet" />
   <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
@@ -19,7 +19,7 @@
     	var root = document.getElementById("top_left");
 			root.innerHTML= "";
 			var cap = document.createElement("h3");
-			cap.appendChild(document.createTextNode("Show floor stack"));
+			cap.appendChild(document.createTextNode("Select the floor you want"));
 			root.appendChild(cap);
 			var tbl = document.createElement("table");
 			tbl.className = "floorstack";
@@ -76,6 +76,7 @@
 				img.onclick = function() {
 					popitup(img.src);
 				};
+			document.getElementById("bp_header").innerHTML = 'Blueprint';
     		showRoom();
 		}
 		
@@ -83,6 +84,7 @@
 			var img = document.getElementById("floorplan");
 			img.src = 'pics/campus.jpg';
 			img.alt = 'River Campus @ University of Rochester';
+			document.getElementById("bp_header").innerHTML= 'River Campus @ U of R!';
 			clearRoom()
 		}
 
@@ -134,11 +136,12 @@
 <body>
 	<div id="container">
   	<div id="header">
-  		<h1>Submit Your Room Options</h1>
+  		<h1>Housing Selection</h1>
   		<hr />
   	</div>
 
 		<div id="menu2">
+			<p>Click on the name of the building you want.</p>
 			<div id="res2">
 				<h2>Res Quad</h2>
 				<ul>
@@ -201,7 +204,7 @@
 		</div>
 
 		<div id="top_right">
-			<h3>Show floor plan</h3>
+			<h3 id="bp_header">River Campus @ U of R!</h3>
 			<img id="floorplan" src="pics/campus.jpg" alt="River Campus @ University of Rochester" height="300px" width="450px">
 		</div>
 		<br />
