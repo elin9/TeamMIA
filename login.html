@@ -15,6 +15,7 @@
 
     /* show floor stack */
     function showStack(name, height) {
+    	clearFloor();
     	var root = document.getElementById("top_left");
 			root.innerHTML= "";
 			var cap = document.createElement("h3");
@@ -53,10 +54,10 @@
 				btn.type = "button";
 				btn.onclick = (function() {
 					var currentI = i;
-      		return function() {
-          	showFloor(name, currentI.toString());
-      		}
-   			}) ();
+      				return function() {
+          				showFloor(name, currentI.toString());
+      				}
+   				}) ();
 
 				btn.appendChild(document.createTextNode("Select"));
 				row.appendChild(btn);
@@ -64,21 +65,30 @@
 			}
 			tbl.appendChild(tbo);
 			root.appendChild(tbl);
+			
 		}
 
 		/* show floorplan */
 		function showFloor(name, floor) {
-    	var img= document.getElementById("floorplan");
-			img.src = 'pics/' + name + floor + '.png';
-			img.alt = name;
-			img.onclick = function() {
-				popitup(img.src);
-			};
-    	showRoom();
+    		var img = document.getElementById("floorplan");
+				img.src = 'pics/' + name + floor + '.png';
+				img.alt = name;
+				img.onclick = function() {
+					popitup(img.src);
+				};
+    		showRoom();
+		}
+		
+		function clearFloor() {
+			var img = document.getElementById("floorplan");
+			img.src = 'pics/campus.jpg';
+			img.alt = 'River Campus @ University of Rochester';
+			clearRoom()
 		}
 
 		/* show room options */
 		function showRoom() {
+			clearRoommates();
 			var root = document.getElementById("bottom_left");
 			root.innerHTML="";
 			var inputRadio = "<h3>Select a room from below</h3><br/>";
@@ -92,10 +102,21 @@
 				element[i].setAttribute('onclick',"showForm()");
 			}
 		}
+		
+		function clearRoom() {
+			var loc = document.getElementById("bottom_left");
+			loc.innerHTML = "";
+			clearRoommates();
+		
+		}
 
 		/* show roommates */
 		function showForm() {
 			document.getElementById("bottom_right").style.display = 'block';
+		}
+		
+		function clearRoommates() {
+			document.getElementById("bottom_right").style.display = 'none';
 		}
 
 		function popitup(url) {
