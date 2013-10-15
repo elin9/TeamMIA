@@ -2,135 +2,219 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>Submit Your Room Options</title>
-    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
-    <link href="reslife.css" type="text/css" rel="stylesheet" />
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Submit Your Room Options</title>
+  <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+  <link href="reslife.css" type="text/css" rel="stylesheet" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+	<script src="reslife.js" type="text/javascript"></script>
 
-    <script type="text/javascript">
-    	function showFloor(filename) {
-    		document.getElementById('floor').src="pics/" + filename;
+  <script type="text/javascript">
+
+    /* show floor stack */
+    function showStack(name, height) {
+    	var root = document.getElementById("top_left");
+			root.innerHTML= "";
+			var cap = document.createElement("h3");
+			cap.appendChild(document.createTextNode("Show floor stack"));
+			root.appendChild(cap);
+			var tbl = document.createElement("table");
+			tbl.className = "floorstack";
+			tbl.cellSpacing = "15";
+			var tbo = document.createElement("tbody");
+			var row, cell;
+
+			/* header */
+			row = document.createElement("tr");
+			cell = document.createElement("th");
+			cell.appendChild(document.createTextNode("Floor number"));
+			row.appendChild(cell);
+			cell = document.createElement("th");
+			cell.appendChild(document.createTextNode("Available number"));
+			row.appendChild(cell);
+			tbo.appendChild(row);
+
+			/* content */
+			for (var i=height; i>0; i--) {
+				row = document.createElement("tr");
+				/* floor */
+				cell = document.createElement("td");
+				cell.setAttribute
+				cell.appendChild(document.createTextNode(i));
+				row.appendChild(cell);
+				/* # of available rooms */
+				cell = document.createElement("td");
+				cell.appendChild(document.createTextNode("36"));
+				row.appendChild(cell);
+				/* button */
+				var btn = document.createElement("button");
+				btn.type = "button";
+				btn.onclick = (function() {
+					var currentI = i;
+      		return function() {
+          	showFloor(name, currentI.toString());
+      		}
+   			}) ();
+
+				btn.appendChild(document.createTextNode("Select"));
+				row.appendChild(btn);
+				tbo.appendChild(row);
 			}
-    </script>
+			tbl.appendChild(tbo);
+			root.appendChild(tbl);
+		}
 
-  </head>
+		/* show floorplan */
+		function showFloor(name, floor) {
+    	var img= document.getElementById("floorplan");
+			img.src = 'pics/' + name + floor + '.png';
+			img.alt = name;
+			img.onclick = function() {
+				popitup(img.src);
+			};
+    	showRoom();
+		}
 
+		/* show room options */
+		function showRoom() {
+			var root = document.getElementById("bottom_left");
+			root.innerHTML="";
+			var inputRadio = "<h3>Select a room from below</h3><br/>";
+			inputRadio += "<div id = 'left'><label><input name='rad' type='radio'>510</label><label><input name='rad' type='radio'>520</label>";
+			inputRadio += "<label><input name='rad' type='radio'>530</label><label><input name='rad' type='radio'>540</label></div>";
+			inputRadio += "<div id = 'right'><label><input name='rad' type='radio'>550</label><label><input name='rad' type='radio'>560</label>";
+			inputRadio += "<label><input name='rad' type='radio'>570</label><label><input name='rad' type='radio'>580</label></div>";
+			root.innerHTML=inputRadio;
+			var element = document.getElementsByTagName("input");
+			for (var i=element.length-1; i>=0; i--) {
+				element[i].setAttribute('onclick',"showForm()");
+			}
+		}
 
-  <body>
-		<div id="container">
-  		<div id="header">
-  			<h1>Submit Your Room Options</h1>
-  			<hr />
-  		</div>
+		/* show roommates */
+		function showForm() {
+			document.getElementById("bottom_right").style.display = 'block';
+		}
 
-			<div id="menu2">
+		function popitup(url) {
+			newwindow=window.open(url, 'Larger view', 'height=500, width=500');
+			if (window.focus) {
+				newwindow.focus();
+			}
+			return false;
+		}
 
-				<!--
-				<div id="susan2">
-					<h2>Susan B. Anthony</h2>
-					<ul>
-      			<li><a onclick="showFloor('susan.png')">Gannett</a></li>
-        		<li><a onclick="showFloor('susan.png')">Gates</a></li>
-    				<li><a onclick="showFloor('susan.png')">Hollister</a></li>
-  					<li><a onclick="showFloor('susan.png')">Morgan</a></li>
-   				</ul>
-				</div>
-				-->
-
-
-				<div id="res2">
-					<h2>Res Quad</h2>
-					<ul>
-        		<li><a onclick="showFloor('burton.png')">Burton</a></li>
-        		<li><a onclick="showFloor('crosby.png')">Crosby</a></li>
-        		<!--
-        		<li><a onclick="showFloor('gilbert.png')">Gilbert</a></li>
-        		<li><a onclick="showFloor('hoeing.png')">Hoeing</a></li>
-        		<li><a onclick="showFloor('lovejoy.png')">Lovejoy</a></li>
-        		<li><a onclick="showFloor('tiernan.png')">Tiernan</a></li>
-        		-->
-      		</ul>
-				</div>
-
-				<div id="jackson2">
-					<h2>Jackson Court</h2>
-					<ul>
-        		<li><a onclick="showFloor('anderson.png')">Anderson</a></li>
-        		<li><a onclick="showFloor('obrien.png')">O'Brien</a></li>
-        		<li><a onclick="showFloor('wilder.png')">Wilder</a></li>
-      		</ul>
-				</div>
-
-				<div id="hill2">
-					<h2>Hill Court</h2>
-					<ul>
-        		<li><a onclick="showFloor('chambers.png')">Chambers</a></li>
-        		<li><a onclick="showFloor('fairchild.png')">Fairchild</a></li>
-        		<li><a onclick="showFloor('gale.png')">Gale</a></li>
-        		<li><a onclick="showFloor('kendrick.png')">Kendrick</a></li>
-        		<li><a onclick="showFloor('munro.png')">Munro</a></li>
-        		<li><a onclick="showFloor('slater.png')">Slater</a></li>
-      		</ul>
-				</div>
+  </script>
+</head>
 
 
-				<div id="riverview2">
-					<h2>Riverview</h2>
-					<ul>
-        		<li><a onclick="showFloor('riverviewA.png')">Riverview A</a></li>
-        		<li><a onclick="showFloor('riverviewB.png')">Riverview B</a></li>
-        		<li><a onclick="showFloor('riverviewC.png')">Riverview C</a></li>
-        		<li><a onclick="showFloor('riverviewD.png')">Riverview D</a></li>
-        		<li><a onclick="showFloor('riverviewE.png')">Riverview E</a></li>
-      		</ul>
-				</div>
+<body>
+	<div id="container">
+  	<div id="header">
+  		<h1>Submit Your Room Options</h1>
+  		<hr />
+  	</div>
 
-				<!--
-				<div id="fraternity2">
-					<h2>Fraternity Quad</h2>
-					<ul>
-        		<li><a onclick="showFloor('alpha.png')">Alpha Delta Phi</a></li>
-        		<li><a onclick="showFloor('delta.png')">Delta Kappa Epsilon</a></li>
-        		<li><a onclick="showFloor('douglass.png')">Douglass Leadership</a></li>
-        		<li><a onclick="showFloor('drama.png')">Drama House</a></li>
-        		<li><a onclick="showFloor('psi.png')">Psi Upsilon</a></li>
-        		<li><a onclick="showFloor('sigmamu.png')">Sigma Alpha Mu</a></li>
-        		<li><a onclick="showFloor('sigmachi.png')">Sigma Chi</a></li>
-        		<li><a onclick="showFloor('sigmaphi.png')">Sigma Phi Epsilon</a></li>
-        		<li><a onclick="showFloor('thetachi.png')">Theta Chi</a></li>
-      		</ul>
-				</div>
-				-->
-
-
-				<div id="southside2">
-					<h2>Southside</h2>
-					<ul>
-        		<li><a onclick="showFloor('dekiewiet.png')">deKiewiet</a></li>
-        		<li><a onclick="showFloor('maisonettes.png')">Maisonettes</a></li>
-        		<li><a onclick="showFloor('valentine.png')">Valentine</a></li>
-      		</ul>
-				</div>
-
+		<div id="menu2">
+			<div id="res2">
+				<h2>Res Quad</h2>
+				<ul>
+        	<li><a onclick="showStack('Burton', 3)">Burton</a></li>
+        	<li><a onclick="showStack('Crosby', 3)">Crosby</a></li>
+        	<!--
+        		<li><a onclick="showStack(5)">Gilbert</a></li>
+        		<li><a onclick="showStack(5)">Hoeing</a></li>
+        		<li><a onclick="showStack(5)">Lovejoy</a></li>
+        		<li><a onclick="showStack(5)">Tiernan</a></li>
+        	-->
+      	</ul>
 			</div>
 
-			<div id="top_left">
-					<img id="stack" src="pics/floor_stack.jpg" alt="Floor Stack" height="50%" width="60%">
+			<div id="jackson2">
+				<h2>Jackson Court</h2>
+				<ul>
+     	   <li><a onclick="showStack('Anderson', 10)">Anderson</a></li>
+      	  <li><a onclick="showStack('OBrien', 5)">O'Brien</a></li>
+      	  <li><a onclick="showStack('Wilder', 9)">Wilder</a></li>
+     	 </ul>
 			</div>
 
-			<div id="top_right">
-				<img id="floor" src="pics/campus.jpg" alt="River Campus @ University of Rochester" height="50%" width="100%">
+			<div id="hill2">
+				<h2>Hill Court</h2>
+				<ul>
+      	  <li><a onclick="showStack('Chambers', 4)">Chambers</a></li>
+       	 <li><a onclick="showStack('Fairchild', 4)">Fairchild</a></li>
+       	 <li><a onclick="showStack('Gale', 4)">Gale</a></li>
+       	 <li><a onclick="showStack('Kendrick', 4)">Kendrick</a></li>
+       	 <li><a onclick="showStack('Munro', 4)">Munro</a></li>
+       	 <li><a onclick="showStack('Slater, 4)">Slater</a></li>
+      	</ul>
 			</div>
-			<br />
 
-			<div id="bottom_left">
-				<p>drop-down room menu</p>
+			<div id="riverview2">
+				<h2>Riverview</h2>
+				<ul>
+        	<li><a onclick="showStack('RiverviewA', 4)">Riverview A</a></li>
+        	<li><a onclick="showStack('RiverviewB', 4)">Riverview B</a></li>
+        	<li><a onclick="showStack('RiverviewC', 4)">Riverview C</a></li>
+        	<li><a onclick="showStack('RiverviewD', 3)">Riverview D</a></li>
+        	<li><a onclick="showStack('RiverviewE', 3)">Riverview E</a></li>
+      	</ul>
 			</div>
 
-			<div id="bottom_right">
-				<p>show roommates</p>
+			<div id="southside2">
+				<h2>Southside</h2>
+				<ul>
+        	<li><a onclick="showStack('deKiewiet', 11)">deKiewiet</a></li>
+        	<li><a onclick="showStack('Maisonettes', 1)">Maisonettes</a></li>
+        	<li><a onclick="showStack('Valentine', 11)">Valentine</a></li>
+      	</ul>
 			</div>
+		</div>
+
+		<div id="top_left">
+			<h3>Show floor stack</h3>
+			<img src="pics/floor_stack.jpg" alt="Floor Stack" height="300px" width="150px">
+		</div>
+
+		<div id="top_right">
+			<h3>Show floor plan</h3>
+			<img id="floorplan" src="pics/campus.jpg" alt="River Campus @ University of Rochester" height="300px" width="450px">
+		</div>
+		<br />
+
+		<div id="bottom_left">
+
+		</div>
+
+		<div id="bottom_right" style="display:none;">
+			<h3>Select your roommate (drag & drop)</h3>
+			<div>
+				<div class="floater">
+					<p>Rooms:</p>
+					<form id= "roommates" method = "post" action="http://ec2-54-200-68-207.us-west-2.compute.amazonaws.com/">
+						<label for="551">551:</label>
+						<input type="text" name="551" id="551"><br/>
+						<label for="552">552:</label>
+						<input type="text" name="552" id="552"><br/>
+						<label for="553">553:</label>
+						<input type="text" name="553" id="553"><br/> <br/>
+						<input type="submit" value="Done!">
+					</form>
+				</div>
+
+				<div class="floater">
+					<p>Students:</p>
+					<ul id= "students" name="students">
+						<li value="qing">Qing Guo</li>
+						<li value="emy">Emy Lin</li>
+						<li value="yazz">Yazzmynn Wilson</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 
 			<!--
@@ -168,8 +252,6 @@
             &nbsp;&nbsp;&nbsp;<input type="radio" name="bdr" value="two">Two-bedroom<br />
 					</form>
 				</div>
-			-->
-
 
 				<div id="submit">
 					<form name="submit" action="" method="">
@@ -189,6 +271,7 @@
   					<input type="reset" value="Reset"><br />
 					</form>
 				</div>
+			-->
 
 			<div id="footer">
 				<hr />
