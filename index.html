@@ -10,7 +10,7 @@
 
     <script type="text/javascript">
     	function rooms(building, room) {
-    		document.getElementById('roombox').innerHTML = "Number of rooms available in " + building + ": " + room;
+    		document.getElementById('rooms_free').innerHTML = "Number of rooms available in " + building + ": " + room;
     		return true;
     	}
     </script>
@@ -23,6 +23,7 @@
 
   		<div id="header">
   			<h1>ResLife @ University of Rochester</h1>
+  			<br>
   			<p>Check housing availability while you're waiting for your lottery time to arrive! Click on the name of a living area or specific building to locate it on the map. The number of rooms still available in that building will display above the map. Mouse over the checkpoints to see a description of the building.</p>
 
 <p>When your lottery time arrives, log in on the upper right hand corner with your NetID and password to select a room.</p>
@@ -76,7 +77,7 @@
 					<h2><a target="zee_map" href="http://www.zeemaps.com/pub/showOnly?c=sky">Jackson Court</a></h2>
 					<ul>
         		<li><a target="zee_map" href="http://www.zeemaps.com/item/Anderson" onclick="return rooms('Anderson', '28')";>Anderson</a></li>
-        		<li><a target="zee_map" href="http://www.zeemaps.com/item/O'Brien" onclick="return rooms('O'Brien', '31')";>O'Brien</a></li>
+        		<li><a target="zee_map" href="http://www.zeemaps.com/item/O\'Brien" onclick="return rooms('O\'Brien', '31')";>O'Brien</a></li>
         		<li><a target="zee_map" href="http://www.zeemaps.com/item/Wilder" onclick="return rooms('Wilder', '24')";>Wilder</a></li>
       		</ul>
 				</div>
@@ -84,11 +85,11 @@
 				<div id="riverview">
 					<h2><a target="zee_map" href="http://www.zeemaps.com/pub/showOnly?c=lilac">Riverview</a></h2>
 					<ul>
-        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview A">Riverview A</a></li>
-        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview B">Riverview B</a></li>
-        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview C">Riverview C</a></li>
-        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview D">Riverview D</a></li>
-        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview E">Riverview E</a></li>
+        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview A" onclick="return rooms('Riverview A', '24')">Riverview A</a></li>
+        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview B" onclick="return rooms('Riverview B', '24')">Riverview B</a></li>
+        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview C" onclick="return rooms('Riverview C', '24')">Riverview C</a></li>
+        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview D" onclick="return rooms('Riverview D', '24')">Riverview D</a></li>
+        		<li><a target="zee_map" href="http://www.zeemaps.com/item/Riverview E" onclick="return rooms('Riverview E', '24')">Riverview E</a></li>
       		</ul>
 				</div>
 
@@ -133,7 +134,7 @@
 
 			</div>
 			<div id="roombox">
-				<p>Rooms Available</p>
+				<p id = "rooms_free">Rooms Available</p>
 			</div>
 			<div id="content">
 				<iframe frameborder="0" style="width:100%; height:100%" src="http://www.zeemaps.com/pub?group=692206&legend=1&locate=1"> </iframe>
