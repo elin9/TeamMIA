@@ -4,7 +4,7 @@
 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>Submit Your Room Options</title>
+    <title>Housing Selection</title>
     <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
     <link href="reslife.css" type="text/css" rel="stylesheet" />
 
@@ -20,12 +20,12 @@
   <body>
 		<div id="container">
   		<div id="header">
-  			<h1>Submit Your Room Options</h1>
+  			<h1>Housing Selection</h1>
   			<hr />
   		</div>
 
 			<div id="menu2">
-
+				<p>Click on the name of the building you want.</p> 
 				<!--
 				<div id="susan2">
 					<h2>Susan B. Anthony</h2>
@@ -116,20 +116,23 @@
 			</div>
 
 			<div id="top_left">
+				<p>Click on the floor you want.</p>
+				<p>Red = no rooms available on this floor; Green = rooms available (number on the right indicates how many)</p>
 					<img id="stack" src="pics/floor_stack.jpg" alt="Floor Stack" height="50%" width="60%">
 			</div>
 
 			<div id="top_right">
+				<p>Blueprint</p>
 				<img id="floor" src="pics/campus.jpg" alt="River Campus @ University of Rochester" height="50%" width="100%">
 			</div>
 			<br />
 
 			<div id="bottom_left">
-				<p>drop-down room menu</p>
+				<p>Select the room that you want from the menu.</p>
 			</div>
 
 			<div id="bottom_right">
-				<p>show roommates</p>
+				<p>Drag and drop you and your roommates' names into the appropriate location, and then hit done!</p>
 			</div>
 
 
