@@ -2,124 +2,151 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>Submit Your Room Options</title>
-    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
-    <link href="reslife.css" type="text/css" rel="stylesheet" />
-
-    <script type="text/javascript">
-    	function showFloor(filename) {
-    		document.getElementById('floor').src="pics/" + filename;
-			}
-    </script>
-
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Housing Selection</title>
+  <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+  <link href="reslife.css" type="text/css" rel="stylesheet" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+	<script src="reslife.js"></script>
+</head>
 
 
-  <body>
-		<div id="container">
-  		<div id="header">
-  			<h1>Submit Your Room Options</h1>
-  			<hr />
-  		</div>
+<body>
+	<div id="container">
+  	<div id="header">
+  		<h1>Housing Selection</h1>
+  		<hr />
+  	</div>
 
-			<div id="menu2">
-				<div id="susan2">
-					<h2>Susan B. Anthony</h2>
-					<ul>
-      			<li><a onclick="showFloor('susan.png')">Gannett</a></li>
-        		<li><a onclick="showFloor('susan.png')">Gates</a></li>
-    				<li><a onclick="showFloor('susan.png')">Hollister</a></li>
-  					<li><a onclick="showFloor('susan.png')">Morgan</a></li>
-   				</ul>
-				</div>
-
-				<div id="riverview2">
-					<h2>Riverview</h2>
-					<ul>
-        		<li><a onclick="showFloor('riverviewA.png')">Apartment A</a></li>
-        		<li><a onclick="showFloor('riverviewB.png')">Apartment B</a></li>
-        		<li><a onclick="showFloor('riverviewC.png')">Apartment C</a></li>
-        		<li><a onclick="showFloor('riverviewD.png')">Apartment D</a></li>
-        		<li><a onclick="showFloor('riverviewE.png')">Apartment E</a></li>
-      		</ul>
-				</div>
-				<br />
-
-				<div id="freshman2">
-					<h2>Freshman Quad</h2>
-					<ul>
-        		<li><a onclick="showFloor('burton.png')">Burton</a></li>
-        		<li><a onclick="showFloor('crosby.png')">Crosby</a></li>
-        		<li><a onclick="showFloor('gilbert.png')">Gilbert</a></li>
-        		<li><a onclick="showFloor('hoeing.png')">Hoeing</a></li>
-        		<li><a onclick="showFloor('lovejoy.png')">Lovejoy</a></li>
-        		<li><a onclick="showFloor('tiernan.png')">Tiernan</a></li>
-      		</ul>
-				</div>
-
-				<div id="hill2">
-					<h2>Hill Court</h2>
-					<ul>
-        		<li><a onclick="showFloor('chambers.png')">Chambers</a></li>
-        		<li><a onclick="showFloor('fairchild.png')">Fairchild</a></li>
-        		<li><a onclick="showFloor('gale.png')">Gale</a></li>
-        		<li><a onclick="showFloor('kendrick.png')">Kendrick</a></li>
-        		<li><a onclick="showFloor('munro.png')">Munro</a></li>
-        		<li><a onclick="showFloor('slater.png')">Slater</a></li>
-      		</ul>
-				</div>
-				<br />
-
-				<div id="fraternity2">
-					<h2>Fraternity Quad</h2>
-					<ul>
-        		<li><a onclick="showFloor('alpha.png')">Alpha Delta Phi</a></li>
-        		<li><a onclick="showFloor('delta.png')">Delta Kappa Epsilon</a></li>
-        		<li><a onclick="showFloor('douglass.png')">Douglass Leadership</a></li>
-        		<li><a onclick="showFloor('drama.png')">Drama House</a></li>
-        		<li><a onclick="showFloor('psi.png')">Psi Upsilon</a></li>
-        		<li><a onclick="showFloor('sigmamu.png')">Sigma Alpha Mu</a></li>
-        		<li><a onclick="showFloor('sigmachi.png')">Sigma Chi</a></li>
-        		<li><a onclick="showFloor('sigmaphi.png')">Sigma Phi Epsilon</a></li>
-        		<li><a onclick="showFloor('thetachi.png')">Theta Chi</a></li>
-      		</ul>
-				</div>
-
-				<div id="jackson2">
-					<h2>Jackson Court</h2>
-					<ul>
-        		<li><a onclick="showFloor('anderson.png')">Anderson</a></li>
-        		<li><a onclick="showFloor('obrien.png')">O'Brien</a></li>
-        		<li><a onclick="showFloor('wilder.png')">Wilder</a></li>
-      		</ul>
-				</div>
-
-				<div id="southside2">
-					<h2>Southside</h2>
-					<ul>
-        		<li><a onclick="showFloor('dekiewiet.png')">deKiewiet</a></li>
-        		<li><a onclick="showFloor('maisonettes.png')">Maisonettes</a></li>
-        		<li><a onclick="showFloor('valentine.png')">Valentine</a></li>
-      		</ul>
-				</div>
-				<br />
-
+		<div id="menu2">
+			<div class="instbox">
+				<p>Click on the building you want</p>
+			</div>
+			<div id="res2">
+				<h2>Res Quad</h2>
+				<ul>
+        	<li><a onclick="showStack('Burton', 3)">Burton</a></li>
+        	<li><a onclick="showStack('Crosby', 3)">Crosby</a></li>
+        	<!--
+        		<li><a onclick="showStack(5)">Gilbert</a></li>
+        		<li><a onclick="showStack(5)">Hoeing</a></li>
+        		<li><a onclick="showStack(5)">Lovejoy</a></li>
+        		<li><a onclick="showStack(5)">Tiernan</a></li>
+        	-->
+      	</ul>
 			</div>
 
-			<div id="content2">
-				<img id="floor" src="pics/campus.jpg" alt="River Campus @ University of Rochester">
-
+			<div id="jackson2">
+				<h2>Jackson Court</h2>
+				<ul>
+     	   <li><a onclick="showStack('Anderson', 10)">Anderson</a></li>
+      	  <li><a onclick="showStack('OBrien', 5)">O'Brien</a></li>
+      	  <li><a onclick="showStack('Wilder', 9)">Wilder</a></li>
+     	 </ul>
 			</div>
 
+			<div id="hill2">
+				<h2>Hill Court</h2>
+				<ul>
+      	  <li><a onclick="showStack('Chambers', 4)">Chambers</a></li>
+       	 <li><a onclick="showStack('Fairchild', 4)">Fairchild</a></li>
+       	 <li><a onclick="showStack('Gale', 4)">Gale</a></li>
+       	 <li><a onclick="showStack('Kendrick', 4)">Kendrick</a></li>
+       	 <li><a onclick="showStack('Munro', 4)">Munro</a></li>
+       	 <li><a onclick="showStack('Slater, 4)">Slater</a></li>
+      	</ul>
+			</div>
+
+			<div id="riverview2">
+				<h2>Riverview</h2>
+				<ul>
+        	<li><a onclick="showStack('RiverviewA', 4)">Riverview A</a></li>
+        	<li><a onclick="showStack('RiverviewB', 4)">Riverview B</a></li>
+        	<li><a onclick="showStack('RiverviewC', 4)">Riverview C</a></li>
+        	<li><a onclick="showStack('RiverviewD', 3)">Riverview D</a></li>
+        	<li><a onclick="showStack('RiverviewE', 3)">Riverview E</a></li>
+      	</ul>
+			</div>
+
+			<div id="southside2">
+				<h2>Southside</h2>
+				<ul>
+        	<li><a onclick="showStack('deKiewiet', 11)">deKiewiet</a></li>
+        	<li><a onclick="showStack('Maisonettes', 1)">Maisonettes</a></li>
+        	<li><a onclick="showStack('Valentine', 11)">Valentine</a></li>
+      	</ul>
+			</div>
+		</div>
+
+		<div id="top_left">
+			<h3>Building overview</h3>
+			<div id="instbox1" style="display:none">
+				<p>Select the floor you want:
+					<ul>
+						<li><font color="#FF0000">Red</font> = no rooms available</li>
+						<li><font color="#00CC00">Green</font> = rooms available</li>
+					</ul>
+				</p>
+			</div>
+			<div id="floorstack">
+				<img src="pics/floor_stack.jpg" alt="Floor Stack" height="300px" width="150px">
+			</div>
+		</div>
+
+		<div id="top_right">
+			<h3 id="bp_header">River Campus @ U of R!</h3>
+			<div id="instbox2" style="display:none">
+				<p>Click on the image to enlarge</p>
+			</div>
+			<img id="floorplan" src="pics/campus.jpg" alt="River Campus @ University of Rochester" height="300px" width="450px">
+		</div>
+		<br />
+
+		<div id="bottom_left">
+		</div>
+
+		<div id="bottom_right" style="display:none">
+			<h3>Roommate options</h3>
+			<div class="instbox">
+				<p>Add you or your roommates to a room by clicking the room box and then clicking on your roommate, and then hit done!</p>
+			</div>
+			<div>
+				<div class="floater">
+					<p>Rooms:</p>
+					<form id= "roommates" method = "post" action="http://ec2-54-200-68-207.us-west-2.compute.amazonaws.com/">
+						<label for="551">551:</label>
+						<input type="text" name="551" id="551" onclick="fillBox('551')"><br/>
+						<label for="552">552:</label>
+						<input type="text" name="552" id="552" onclick="fillBox('552')"><br/>
+						<label for="553">553:</label>
+						<input type="text" name="553" id="553" onclick="fillBox('553')"><br/> <br/>
+						<input id = "confirm" type="submit" value="Done!">
+					</form>
+				</div>
+
+				<div class="floater">
+					<p>Students:</p>
+					<select id="students" name="students" size=5 onchange="selectChange()">
+						<option value="Qing Guo">Qing Guo</option>
+						<option value="Emy Lin">Emy Lin</option>
+						<option value="Yazzmynn Wilson">Yazzmynn Wilson</option>
+					</select>
+				</div>
+			</div>
+
+		</div>
+
+
+			<!--
 				<div id="primary">
   				<h4>Primary room option</h4>
   				<form name="primary" action="" method="">
 						Housing area: <br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="susan">Susan B. Anthony<br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="riverview">Riverview<br />
-						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="freshman">Freshman Quad<br />
+						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="res">Res Quad<br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="hill">Hill Court<br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="fraternity">Fraternity Quad<br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="jackson">Jackson Court<br />
@@ -136,7 +163,7 @@
 						Housing area: <br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="susan">Susan B. Anthony<br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="riverview">Riverview<br />
-						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="freshman">Freshman Quad<br />
+						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="res">Res Quad<br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="hill">Hill Court<br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="fraternity">Fraternity Quad<br />
 						&nbsp;&nbsp;&nbsp;<input type="radio" name="area" value="jackson">Jackson Court<br />
@@ -166,6 +193,7 @@
   					<input type="reset" value="Reset"><br />
 					</form>
 				</div>
+			-->
 
 			<div id="footer">
 				<hr />
@@ -174,3 +202,5 @@
 		</div>
   </body>
 </html>
+
+
