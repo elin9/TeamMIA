@@ -100,7 +100,7 @@ var text_box = document.getElementById('551');
 //			inputRadio += "<label><input name='rad' type='radio'>530</label><label><input name='rad' type='radio'>540</label></div>";
 //			inputRadio += "<div id='right'><label><input name='rad' type='radio'>550</label><label><input name='rad' type='radio'>560</label>";
 //			inputRadio += "<label><input name='rad' type='radio'>570</label><label><input name='rad' type='radio'>580</label></div>";
-			inputRadio += "<select id='students' name='students' size=5>";
+			inputRadio += "<select id='students' name='students' style='width:44px;height:100px' size=5>";
 			inputRadio += "<option name='rad' value='510'>510</option>";
 			inputRadio += "<option name='rad' value='520'>520</option>";
 			inputRadio += "<option name='rad' value='540'>540</option>";
