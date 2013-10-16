@@ -16,11 +16,10 @@
     /* show floor stack */
     function showStack(name, height) {
     	clearFloor();
-    	var root = document.getElementById("top_left");
+    	document.getElementById("instbox1").style.display = 'block';
+    	var root = document.getElementById("floorstack");
 			root.innerHTML= "";
-			var cap = document.createElement("h3");
-			cap.appendChild(document.createTextNode("Select the floor you want"));
-			root.appendChild(cap);
+
 			var tbl = document.createElement("table");
 			tbl.className = "floorstack";
 			tbl.cellSpacing = "15";
@@ -65,7 +64,7 @@
 			}
 			tbl.appendChild(tbo);
 			root.appendChild(tbl);
-			
+
 		}
 
 		/* show floorplan */
@@ -79,13 +78,13 @@
 			document.getElementById("bp_header").innerHTML = 'Blueprint';
     		showRoom();
 		}
-		
+
 		function clearFloor() {
 			var img = document.getElementById("floorplan");
 			img.src = 'pics/campus.jpg';
 			img.alt = 'River Campus @ University of Rochester';
 			document.getElementById("bp_header").innerHTML= 'River Campus @ U of R!';
-			clearRoom()
+			clearRoom();
 		}
 
 		/* show room options */
@@ -93,30 +92,32 @@
 			clearRoommates();
 			var root = document.getElementById("bottom_left");
 			root.innerHTML="";
-			var inputRadio = "<h3>Select a room from below</h3><br/>";
-			inputRadio += "<div id = 'left'><label><input name='rad' type='radio'>510</label><label><input name='rad' type='radio'>520</label>";
+			var inputRadio = "<h3>Room options</h3>";
+			inputRadio += "<div class='instbox'><p>Select the room you want from below</p></div>";
+			inputRadio += "<div id='left'><label><input name='rad' type='radio'>510</label><label><input name='rad' type='radio'>520</label>";
 			inputRadio += "<label><input name='rad' type='radio'>530</label><label><input name='rad' type='radio'>540</label></div>";
-			inputRadio += "<div id = 'right'><label><input name='rad' type='radio'>550</label><label><input name='rad' type='radio'>560</label>";
+			inputRadio += "<div id='right'><label><input name='rad' type='radio'>550</label><label><input name='rad' type='radio'>560</label>";
 			inputRadio += "<label><input name='rad' type='radio'>570</label><label><input name='rad' type='radio'>580</label></div>";
 			root.innerHTML=inputRadio;
 			var element = document.getElementsByTagName("input");
 			for (var i=element.length-1; i>=0; i--) {
 				element[i].setAttribute('onclick',"showForm()");
 			}
+			document.getElementById("confirm").setAttribute('onclick',"confirmation()");
 		}
-		
+
 		function clearRoom() {
 			var loc = document.getElementById("bottom_left");
 			loc.innerHTML = "";
 			clearRoommates();
-		
+
 		}
 
 		/* show roommates */
 		function showForm() {
 			document.getElementById("bottom_right").style.display = 'block';
 		}
-		
+
 		function clearRoommates() {
 			document.getElementById("bottom_right").style.display = 'none';
 		}
@@ -127,6 +128,10 @@
 				newwindow.focus();
 			}
 			return false;
+		}
+
+		function confirmation()	{
+			alert("Your submission was successful!");
 		}
 
   </script>
@@ -141,7 +146,9 @@
   	</div>
 
 		<div id="menu2">
-			<p>Click on the name of the building you want.</p>
+			<div class="instbox">
+				<p>Click on the building you want</p>
+			</div>
 			<div id="res2">
 				<h2>Res Quad</h2>
 				<ul>
@@ -199,8 +206,18 @@
 		</div>
 
 		<div id="top_left">
-			<h3>Show floor stack</h3>
-			<img src="pics/floor_stack.jpg" alt="Floor Stack" height="300px" width="150px">
+			<h3>Building overview</h3>
+			<div id="instbox1" style="display:none">
+				<p>Select the floor you want:
+					<ul>
+						<li><font color="#FF0000">Red</font> = no rooms available</li>
+						<li><font color="#00CC00">Green</font> = rooms available</li>
+					</ul>
+				</p>
+			</div>
+			<div id="floorstack">
+				<img src="pics/floor_stack.jpg" alt="Floor Stack" height="300px" width="150px">
+			</div>
 		</div>
 
 		<div id="top_right">
@@ -213,8 +230,11 @@
 
 		</div>
 
-		<div id="bottom_right" style="display:none;">
-			<h3>Select your roommate (drag & drop)</h3>
+		<div id="bottom_right" style="display:none">
+			<h3>Roommate options</h3>
+			<div class="instbox">
+				<p>Drag and drop you and your roommates into the appropriate location, and then hit done!</p>
+			</div>
 			<div>
 				<div class="floater">
 					<p>Rooms:</p>
@@ -225,7 +245,7 @@
 						<input type="text" name="552" id="552"><br/>
 						<label for="553">553:</label>
 						<input type="text" name="553" id="553"><br/> <br/>
-						<input type="submit" value="Done!">
+						<input id = "confirm" type="submit" value="Done!">
 					</form>
 				</div>
 
