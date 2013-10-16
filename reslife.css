@@ -126,7 +126,7 @@
 	#roombox {
 		color:#00CC00;}
 
-	.instbox, #instbox1 {
+	.instbox, #instbox1, #instbox2 {
 		color:#0000FF;
 		text-align:left;
 		border-width:thin;}
