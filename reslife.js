@@ -1,27 +1,138 @@
-$(function() {
-	$("#students li").draggable({
-        appendTo: "body",
-		cursor: "default",
-        revert: "invalid",
-		helper: "original"
-		/*function (event){
-			return $('<span style="white-space:nowrap;"/>')
-            .text($(this).text());
-		}*/
-     });
+var text_box = document.getElementById('551');
+	var selection = document.getElementById('students');
+	
+	window.onload = function() {
+		text_box = document.getElementById('551');
+		selection = document.getElementById('students');
+	}
+	
+	function selectChange() {
+		text_box.value = selection.value;
+	}
+	
+	function fillBox(boxid) {
+		text_box = document.getElementById(boxid);
+	}
+  
 
-	initDroppable($("#551"),551);
-	initDroppable($("#552"),552);
-	initDroppable($("#553"),553);
+    /* show floor stack */
+    function showStack(name, height) {
+    	clearFloor();
+    	document.getElementById("instbox1").style.display = 'block';
+    	var root = document.getElementById("floorstack");
+			root.innerHTML= "";
 
-    function initDroppable($elements, $id) {
-        $elements.droppable({
-            drop: function(event, ui) {
-                var tempid = ui.draggable.text();
-				var droparea = document.getElementById($id);
-				droparea.value = tempid;
-				ui.draggable.hide();
-            }
-        });
-    }
-});
+			var tbl = document.createElement("table");
+			tbl.className = "floorstack";
+			tbl.cellSpacing = "15";
+			var tbo = document.createElement("tbody");
+			var row, cell;
+
+			/* header */
+			row = document.createElement("tr");
+			cell = document.createElement("th");
+			cell.appendChild(document.createTextNode("Floor number"));
+			row.appendChild(cell);
+			cell = document.createElement("th");
+			cell.appendChild(document.createTextNode("Available number"));
+			row.appendChild(cell);
+			tbo.appendChild(row);
+
+			/* content */
+			for (var i=height; i>0; i--) {
+				row = document.createElement("tr");
+				/* floor */
+				cell = document.createElement("td");
+				cell.setAttribute
+				cell.appendChild(document.createTextNode(i));
+				row.appendChild(cell);
+				/* # of available rooms */
+				cell = document.createElement("td");
+				cell.appendChild(document.createTextNode("36"));
+				row.appendChild(cell);
+				/* button */
+				var btn = document.createElement("button");
+				btn.type = "button";
+				btn.onclick = (function() {
+					var currentI = i;
+      				return function() {
+          				showFloor(name, currentI.toString());
+      				}
+   				}) ();
+
+				btn.appendChild(document.createTextNode("Select"));
+				row.appendChild(btn);
+				tbo.appendChild(row);
+			}
+			tbl.appendChild(tbo);
+			root.appendChild(tbl);
+
+		}
+
+		/* show floorplan */
+		function showFloor(name, floor) {
+    		var img = document.getElementById("floorplan");
+				img.src = 'pics/' + name + floor + '.png';
+				img.alt = name;
+				img.onclick = function() {
+					popitup(img.src);
+				};
+			document.getElementById("bp_header").innerHTML = 'Blueprint';
+    		showRoom();
+		}
+
+		function clearFloor() {
+			var img = document.getElementById("floorplan");
+			img.src = 'pics/campus.jpg';
+			img.alt = 'River Campus @ University of Rochester';
+			document.getElementById("bp_header").innerHTML= 'River Campus @ U of R!';
+			clearRoom();
+		}
+
+		/* show room options */
+		function showRoom() {
+			clearRoommates();
+			var root = document.getElementById("bottom_left");
+			root.innerHTML="";
+			var inputRadio = "<h3>Room options</h3>";
+			inputRadio += "<div class='instbox'><p>Select the room you want from below</p></div>";
+			inputRadio += "<div id='left'><label><input name='rad' type='radio'>510</label><label><input name='rad' type='radio'>520</label>";
+			inputRadio += "<label><input name='rad' type='radio'>530</label><label><input name='rad' type='radio'>540</label></div>";
+			inputRadio += "<div id='right'><label><input name='rad' type='radio'>550</label><label><input name='rad' type='radio'>560</label>";
+			inputRadio += "<label><input name='rad' type='radio'>570</label><label><input name='rad' type='radio'>580</label></div>";
+			root.innerHTML=inputRadio;
+			var element = document.getElementsByName('rad');
+			for (var i=element.length-1; i>=0; i--) {
+				element[i].setAttribute('onclick',"showForm()");
+			}
+			document.getElementById("confirm").setAttribute('onclick',"confirmation()");
+		}
+
+		function clearRoom() {
+			var loc = document.getElementById("bottom_left");
+			loc.innerHTML = "";
+			clearRoommates();
+
+		}
+
+		/* show roommates */
+		function showForm() {
+			document.getElementById("bottom_right").style.display = 'block';
+		}
+
+		function clearRoommates() {
+			document.getElementById("bottom_right").style.display = 'none';
+		}
+
+		function popitup(url) {
+			newwindow=window.open(url, 'Larger view', 'height=500, width=500');
+			if (window.focus) {
+				newwindow.focus();
+			}
+			return false;
+		}
+		
+
+		function confirmation()	{
+			alert("Your submission was successful!");
+		}
