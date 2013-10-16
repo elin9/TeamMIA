@@ -34,7 +34,7 @@ Known Bugs & Missing Components
 
 Credits & Acknowledgements
 --------------------------
-Thanks to Stefano Bastianelli and among the rest of the individuals at ResLife, Dr. Ehsan Hoque, and CSC 212 TAs and our alpha testers.
+Thanks to Stefano Bastianelli and among the rest of the individuals at ResLife, Dr. Ehsan Hoque, CSC 212 TAs, our alpha testers.
 
 Contact
 -------
