@@ -26,13 +26,13 @@ On the Front page:
 </ul>
 
 On the Login page:
-<ul>
+<ol>
 Step-by-step instructions:
-<li>1. The left hand side bar contains a list of all housing options. Click on the name of the building you want. </li>
-<li>2. Next, you should see the availability of rooms on each floor of the building. If the floor is red, all rooms have been taken on that floor. If the floor is green, the numbers on the right is a live count of the number of individual rooms still available to choose from on that floor. Click on the floor that you want.</li>
-<li>3. Then, you should see a picture of a blueprint for the floor you picked as well as a drop down menu with a list of all the rooms available on that floor. Select the room that you want from the menu.</li>
-<li>4. Add you or your roommates to a room by clicking the text box next to the room and then clicking on your roommate's name. When you have assigned you and all your roommates to a room, hit done! </li>
-</ul>
+<li>The left hand side bar contains a list of all housing options. Click on the name of the building you want. </li>
+<li>Next, you should see the availability of rooms on each floor of the building. If the floor is red, all rooms have been taken on that floor. If the floor is green, the numbers on the right is a live count of the number of individual rooms still available to choose from on that floor. Click on the floor that you want.</li>
+<li>Then, you should see a picture of a blueprint for the floor you picked as well as a drop down menu with a list of all the rooms available on that floor. Select the room that you want from the menu.</li>
+<li>Add you or your roommates to a room by clicking the text box next to the room and then clicking on your roommate's name. When you have assigned you and all your roommates to a room, hit done! </li>
+</ol>
 
 Requirements
 ------------
