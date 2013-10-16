@@ -16,15 +16,22 @@ Instructions
 ------------
 
 -Front page (display under the title “ResLife @ University of Rochester):
-Check housing availability while you’re waiting for your lottery time to arrive! Click on the name of a living area or specific building to locate it on the map. The number of rooms still available in that building will display above the map. Mouse over the checkpoints to see a description of the building.
-When your lottery time arrives, log in on the upper right hand corner with your NetID and password to select a room.
+<ul>
+<li>Check housing availability while you’re waiting for your lottery time to arrive!</li>
+<li>Click on the name of a living area or specific building to locate it on the map.</li>
+<li>The number of rooms still available in that building will display above the map. </li>
+<li>Mouse over the checkpoints to see a description of the building.</li>
+<li>When your lottery time arrives, log in on the upper right hand corner with your NetID and password to select a room.</li>
+</ul>
 
 -Login page:
---Descriptive instructions:
-1. The left hand side bar contains a list of all housing options. Click on the name of the building you want.
-2. Next, you should see the availability of rooms on each floor of the building. If the floor is red, all rooms have been taken on that floor. If the floor is green, the numbers on the right is a live count of the number of individual rooms still available to choose from on that floor. Click on the floor that you want.
-3. Then, you should see a picture of a blueprint for the floor you picked as well as a drop down menu with a list of all the rooms available on that floor. Select the room that you want from the menu.
-4. Lastly, you should see a list of your previously indicated roommates. Drag and drop them into the appropriate location to confirm the living location of you and your roommates, and click submit.
+<ul>
+<li>--Descriptive instructions:
+<li>1. The left hand side bar contains a list of all housing options. Click on the name of the building you want. </li>
+<li>2. Next, you should see the availability of rooms on each floor of the building. If the floor is red, all rooms have been taken on that floor. If the floor is green, the numbers on the right is a live count of the number of individual rooms still available to choose from on that floor. Click on the floor that you want.</li>
+<li>3. Then, you should see a picture of a blueprint for the floor you picked as well as a drop down menu with a list of all the rooms available on that floor. Select the room that you want from the menu.</li>
+<li>4. Lastly, you should see a list of your previously indicated roommates. Drag and drop them into the appropriate location to confirm the living location of you and your roommates, and click submit.</li>
+</ul>
 
 Requirements
 ------------
