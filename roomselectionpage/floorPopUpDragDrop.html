@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<link href="draganddrop.css" type="text/css" rel="stylesheet" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+		<script src="draganddrop.js" type="text/javascript"></script>
+<script type="text/javascript">
+var _hidediv = null;
+function showdiv(id) {
+ document.getElementById("radio").style.display = 'none';
+    if(_hidediv)
+        _hidediv();
+    var div= document.getElementById('floor');
+	var img = document.createElement("img");
+	img.setAttribute("id",id); 
+	img.src = id+'.jpg';
+	img.onclick=function(){
+		popitup(id+'.jpg');
+	};
+	div.appendChild(img);
+	
+	
+	
+	
+    div.style.display = 'block';
+    createInput();
+    _hidediv = function () { 
+var element = document.getElementsByTagName("img");
+for (index = element.length - 1; index >= 0; index--) {
+    element[index].parentNode.removeChild(element[index]);
+}
+
+_hidediv = null;
+    };
+}
+
+ function createInput(){
+ 
+ document.getElementById("radio").style.display = 'block';
+  var inputRadio = "<div>"  
+    inputRadio += "<p><b>Select a room:</b></p><br/>"
+	inputRadio += "<div id = 'left'><label><input name='rad' type='radio'>510</label><label><input name='rad' type='radio'>520</label>"
+    inputRadio += "<label><input name='rad' type='radio'>530</label><label><input name='rad' type='radio'>540</label></div>"
+    inputRadio += "<div id = 'right'><label><input name='rad' type='radio'>550</label><label><input name='rad' type='radio'>560</label>"
+    inputRadio += "<label><input name='rad' type='radio'>570</label><label><input name='rad' type='radio'>580</label></div>"
+	inputRadio += "</div>"
+   var raddie= document.getElementById("radio");
+  raddie.innerHTML=inputRadio;
+  var element2 = document.getElementsByTagName("input");
+
+	for (index2 = element2.length - 1; index2 >= 0; index2--) {
+
+		element2[index2].setAttribute('onclick',"showForm()");
+  
+	}
+}
+function showForm(){
+document.getElementById("sign").style.display = 'block';
+}
+function popitup(url) {
+	newwindow=window.open(url,'Larger view','height=500,width=500');
+	if (window.focus) {
+		newwindow.focus()
+	}
+	return false;
+}
+</script>
+<style>
+html, body{
+	height:100%;
+	margin:0px;
+	min-height:100%;
+	padding:0px;	
+}
+#building, #radio, #left, #right{
+	float:left;
+}
+#floor, #sign{
+	float:right;
+}
+#building, #floor{
+	height:60%;
+	text-align: center;
+	width:50%;
+}
+#radio, #sign{
+	height:40%;
+	width:50%;
+}
+#building table, #radio > div, #sign div{
+	margin-left:20px;
+	margin-top:20px;
+}
+#floor img{
+	height: 400px;
+	width: 400px;
+}
+#radio label, #sign label{
+	display:block;
+	margin-bottom: 20px;
+	margin-right: 50px;
+}
+
+table{
+	border-collapse: separate;
+	border-spacing: 0 2px ;
+	border:1px solid black;
+}
+.left{
+	padding-right:200px;
+	padding-left:50px;
+	border-left:Lime;
+}
+td{
+	border:none;
+	text-align:center;
+}
+.available{
+	background:Lime;
+}
+tr{
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<div id="building">
+<table>
+<tr ><td class="left" class="available" >Floor</td><td ># of Rooms Available</td><tr>
+<tr class="available" onclick="showdiv('11');"><td class="left" >11</td><td >14</td><tr>
+<tr class="available" onclick="showdiv('10')"><td class="left" >10</td><td >20</td><tr>
+<tr class="available" onclick="showdiv('9')"><td class="left" >9</td><td >21</td><tr>
+<tr style="background:red;"><td class="left" >8</td><td >0</td><tr>
+<tr class="available"onclick="showdiv('7')"><td class="left" >7</td><td >12</td><tr>
+<tr class="available" onclick="showdiv('6')"><td class="left" >6</td><td >6</td><tr>
+<tr class="available" onclick="showdiv('5')"><td class="left" >5</td><td >4</td><tr>
+<tr class="available" onclick="showdiv('4')"><td class="left" >4</td><td >3</td><tr>
+<tr style="background:red;"><td class="left"  >3</td><td >0</td><tr>
+<tr class="available" onclick="showdiv('2')"><td class="left" >2</td><td >9</td><tr>
+<tr class="available" onclick="showdiv('1')"><td class="left" >1</td><td >8</td><tr>
+</table>
+</div>
+
+<div id="floor">
+
+
+</div>
+
+
+<div id='radio'>
+
+
+</div>
+
+<div id="sign" style="display:none;">
+<div>
+
+		
+		<div class="floater">
+			<p>Rooms:</p>
+			<form id= "roommates" method = "post" action="">
+				<label for="551">551:</label>
+				<input type="text" name="551" id="551"><br/>
+				<label for="552">552:</label>
+				<input type="text" name="552" id="552"><br/>
+				<label for="553">553:</label>
+				<input type="text" name="553" id="553"><br/> <br/>
+				<input type="submit" value="Done!">
+			</form>
+		</div>
+	
+		<div class="floater">
+			<p>Students:</p>
+			<ul id= "students" name="students">
+				<li value="qing">Qing Guo</li>
+				<li value="emy">Emy Lin</li>
+				<li value="yazz">Yazzmynn Wilson</li>
+			</ul>
+			<p><b>Drag a roommate's name from the list<br/> and drop it into the corresponding room.</b></p>
+		</div>
+</div>
+</div>
+
+</body>
+</html>
