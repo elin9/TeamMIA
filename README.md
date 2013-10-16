@@ -5,8 +5,8 @@
 What is it?
 -----------
 The purpose of this project was to improve upon the current housing selection process implemented by ResLife.
-The new process and interface saves students time by addressing the fundamental design flaws of the old process. 
-The goals of the project were to implement a coherent interface experience and to optimize information display.
+The new process and interface saves students a lot of time by addressing the fundamental design flaws of the old process. 
+Goals of the project were to implement a coherent interface experience and to optimize information display.
 
 Documentation
 -------------
@@ -20,9 +20,15 @@ Requirements
 <li>Internet connection</li>
 </ul>
 
-Known Bugs
-----------
-<!--TBD-->
+Known Bugs & Missing Components
+-------------------------------
+<ul>
+<li>When assigning roommates to rooms, it is possible to enter one name in all three rooms</li>
+<li>Colors of the floors based on room vacancy not implemented yet</li>
+<li>Numbers (of rooms available) are not live and do not change upon submission yet</li>
+<li>Only Room 550 of a Southside building has been implemented</li>
+<li>Map may not display entirely on some browsers</li>
+</ul>
 
 Credits & Acknowledgements
 --------------------------
