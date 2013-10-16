@@ -5,7 +5,7 @@
 	/* show available rooms on front page */
 	function rooms(building, room) {
   	document.getElementById("roombox").style.display = 'block';
-		document.getElementById("roombox").innerHTML = "Rooms available in " + building + ": " + room;
+		document.getElementById("roombox").innerHTML = "<font size=5><b>Rooms available in " + building + ": " + room + "</b></font>";
   	return true;
   }
 
@@ -42,7 +42,7 @@
 		cell.appendChild(document.createTextNode("Floor number"));
 		row.appendChild(cell);
 		cell = document.createElement("th");
-		cell.appendChild(document.createTextNode("Available number"));
+		cell.appendChild(document.createTextNode("Vacant Rooms"));
 		row.appendChild(cell);
 		tbo.appendChild(row);
 
